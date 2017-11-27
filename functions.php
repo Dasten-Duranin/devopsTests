@@ -1,15 +1,16 @@
 <?php
 
-
-class functions
+class Functions
 {
-
-    public function validate(){
-        print_r('success.php');
-
+    public static function getFormTemplate()
+    {
+        ob_start();
+        include('./form.php');
+        return ob_get_clean();
     }
 
-    public function showResults(){
+    public function valid()
+    {
         $valid = false;
         $email       = preg_match ( " /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/ " , $_POST['email'] );
         $passwordLen = strlen($_POST['mdp']) >= 5;
@@ -30,6 +31,7 @@ class functions
 
         if ($email && $passwordCap && $passwordLen) {
             $valid = true;
+            header('/success.php');
         }
     }
 }
