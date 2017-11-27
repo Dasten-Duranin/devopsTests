@@ -2,7 +2,7 @@
 
 class Functions
 {
-    public static function getFormTemplate()
+    public static function getFormTemplate($passwordErr = null, $emailErr = null)
     {
         ob_start();
         include('./form.php');
@@ -32,6 +32,8 @@ class Functions
         if ($email && $passwordCap && $passwordLen) {
             $valid = true;
             header('/success.php');
+        } else {
+            self::getFormTemplate($passwordErr, $emailErr);
         }
     }
 }

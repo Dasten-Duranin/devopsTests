@@ -10,11 +10,11 @@
     <form id="contact" action="" method="post">
         <fieldset>
             <input name="email" placeholder="Email" type="text" tabindex="1" autofocus>
-            <?=$emailErr ? '<p>'.$emailErr.'</p>' : '' ?>
+            <?=isset($emailErr) ? '<p>'.$emailErr.'</p>' : '' ?>
         </fieldset>
         <fieldset>
             <input name="mdp" placeholder="Mot de passe" type="password" tabindex="2" >
-            <?=$passwordErr ? '<p>'.$passwordErr.'</p>' : '' ?>
+            <?=isset($passwordErr) ? '<p>'.$passwordErr.'</p>' : '' ?>
         </fieldset>
         <fieldset>
             <button name="submit" type="submit">S'inscrire</button>
