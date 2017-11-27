@@ -1,0 +1,21 @@
+RewriteEngine on
+
+RewriteRule ^javascripts/(.+)\.js$																javascript.php?file=$1						                                          [QSA,L] 
+RewriteRule ^skins/(.*)\.(png|gif|jpg|jpeg|ico|swf)$													pictures.php?file=$1&ext=$2								                      [QSA,L]   
+RewriteRule ^skins/(.*)\.(css|less)$														    css.php?file=$1&ext=$2							                              [QSA,L] 
+
+RewriteRule ^rpc.html																			rpc.php																		[QSA,L]
+# Generic ( !!! End !!! )
+# RewriteRule ^([a-zA-Z0-9-]+)/([a-zA-Z-]+)-([0-9]{1,})\.html$                                    index.php?page=$1&element=$3                                                [QSA,L]
+# RewriteRule ^([a-zA-Z0-9-]+)/([a-zA-Z-]+)/?([0-9]{1,})?(\.html)?$                               index.php?page=$1_$2&element=$3                                             [QSA,L]
+# RewriteRule ^([a-zA-Z0-9_.-]+)/([0-9]+)$                                                        index.php?page=$1&element=$2                                                [QSA,L]
+# RewriteRule ^indisponible.html$                                                                 indisponible.php                                                            [QSA,L]
+# RewriteRule ^probleme-technique.html$                                                           probleme-technique.php                                                      [QSA,L]
+# RewriteRule ^player-licensed.swf$                                                               /swf/player.swf                                                             [QSA,L]
+#
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([a-zA-Z0-9_/-]+)(?:\/|\.(html|php|asp)+)$											index.php?page=$1                                                           [QSA,L]
+#
+# RewriteRule ^((editeur|version/.*)/)?captcha.png$                                               captcha.php                                                                 [QSA,L]
+#
+# RewriteRule ^sitemap.xml                                                                        sitemap.php                                                                 [QSA,L]  
