@@ -15,8 +15,7 @@ function __autoload ($class)
         'Context'  => 'lib/core/',
         'Metas'    => 'lib/core/',
         'FmkRpc'   => 'lib/core/',
-        'TestRpc'  => 'models/',
-        'PopupRpc'  => 'models/',
+        'Valid'    => 'models/',
 	);
 
     if (array_key_exists($class,$predefinedPath)) {
