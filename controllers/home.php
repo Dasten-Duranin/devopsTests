@@ -11,8 +11,7 @@ if (isset($_POST['submit'])) {
         $passwordErr = "Il manque une majuscule dans le mot de passe";
 
     } else {
-        var_dump('coucou');
-        header('success.html');
+        header('Location: /success.html');
     }
 }
 
